@@ -14,3 +14,6 @@ ENV/
 env.bak/
 venv.bak/
 pythonenv*
+frontend/node_modules/
+frontend/package-lock/
+node_modules/

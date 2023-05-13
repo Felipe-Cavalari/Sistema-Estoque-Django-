@@ -8,5 +8,5 @@ class ProdutoViewSet(viewsets.ModelViewSet):
     
     queryset = Produto.objects.all()
     serializer_class = ProdutoSerializer
-    
+    methods = ['GET', 'POST', 'PUT', 'DELETE']
 
