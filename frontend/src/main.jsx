@@ -1,38 +1,35 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+
 //configurando o router no react
-import { createBrowserRouter, RouterProvider,  } from 'react-router-dom'
+import { BrowserRouter, Routes, Route  } from 'react-router-dom'
 
-import Home from './routes/home.jsx'
-import Login from './routes/login.jsx'
-import Produtos from './routes/produtos.jsx'
-import ErrorPage from './routes/404.jsx'
+//Componentes do APP
+import { Sidebar } from './components/Sidebar'
+import { Home } from './components/Home'
+import { Produtos } from './components/Produtos'
 
-// const router = createBrowserRouter([
-//   {path: '/', element: <Home />, },
-//   {path: '/login', element: <Login />, },
+//Importando os estilos gerais
+import './styles/global.css'
+import { ErrorPage } from './components/ErrorPage'
 
-// ])
-
-const isLogged = true
-
-const router = createBrowserRouter([
-  {
-    element: <App />,
-    errorElement: <ErrorPage />,
-    children: [
-      {path: '/', element: <Home />, },
-      {path: '/login', element: <Login />, },
-      {path: '/produtos', element: <Produtos />, },
-    ] 
-  
-  }
-
-])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <BrowserRouter>
+
+      <Sidebar />
+        
+        <div className="pages">
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/produtos' element={<Produtos/>} />
+
+          {/* Rota para páginas 404  */}
+          <Route path='*' element={<ErrorPage/>}/>
+        </Routes>
+        </div>
+
+    </BrowserRouter>
   </React.StrictMode>,
 )

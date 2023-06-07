@@ -1,9 +1,0 @@
-.produtos{
-    width: 100%;
-    height: auto;
-    background-color: #ccc;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-}
