@@ -87,14 +87,17 @@ DATABASES = {
     #     'HOST': 'localhost',
     #     'PORT': '5432',
     # },
-    "default": {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sistema_estoque',
-        'USER': 'root',
-        'PASSWORD': 'mysq_pass',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
+    #"default": {
+    #    'ENGINE': 'django.db.backends.mysql',
+    #    'NAME': 'sistema_estoque',
+    #    'USER': 'root',
+    #    'PASSWORD': 'mysq_pass',
+    #    'HOST': 'localhost',
+    #    'PORT': '3306',
+    #},
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite',}
 }
 
 
